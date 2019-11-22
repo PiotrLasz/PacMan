@@ -20,22 +20,27 @@ $(document).ready(function() {
             table += '</tr>';
         }
 
+        table +='</table>';
+
+        $('.Board').html(table);
+
         function addWalls() {
 
-            let allTiles = $('tr td');
+            let allTiles = document.getElementsByTagName('td');
             
-            for (let i=0; i>5; i++) {
 
-                x = Math.floor(Math.random()*allTiles.length);
-                $('td'[x]).addClass('Wall');
+            for (let i=0; i<5; i++) {
+
+                let x = Math.floor(Math.random()*allTiles.length);
+                
+                $('td').eq(x).addClass('Wall');
 
             }
 
-        }
+        };
 
         addWalls();
-        table +='</table>';
-        $('.Board').html(table);
 
     });
+
 });
